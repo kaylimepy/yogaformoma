@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.yoga-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 40px 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.yoga-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.yoga-button:active {
+    transform: translateY(-2px);
+}
+
+.emoji {
+    font-size: 4em;
+}
+
+.label {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.stats {
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+    color: #666;
+    font-size: 1.2em;
+}
+
+#count {
+    font-weight: bold;
+    color: #667eea;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .yoga-button {
+        min-width: 150px;
+        padding: 30px 40px;
+    }
+
+    .label {
+        font-size: 1.2em;
+    }
+}
