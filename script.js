@@ -1,16 +1,16 @@
 // Curated yoga videos for seniors
 const yogaVideos = {
     chair: [
-        { id: 'KNfFCRTNzfM', title: 'Chair Yoga for Seniors - 30 Min Full Body Stretch' },
-        { id: '3OE6VbLZKFY', title: 'Gentle Chair Yoga - Seated Exercise for Seniors' },
-        { id: 'VHrHdWBgJQw', title: '20 Minute Chair Yoga Workout for Seniors' },
-        { id: 'sJhwx4RNO_s', title: 'Chair Yoga - Full Body Stretch' },
-        { id: 'GZzhfPUMsl0', title: 'Relaxing Chair Yoga for Seniors' },
-        { id: '5XzBp-1GcX0', title: '15 Min Chair Yoga - Easy & Gentle' },
-        { id: 'tAUf7aajBWE', title: 'Chair Yoga Flow for Flexibility' },
-        { id: 'bEv5k1GmnGo', title: 'Morning Chair Yoga for Seniors' },
-        { id: 'aG0YJlR3h0o', title: 'Chair Yoga Stretches - Full Session' },
-        { id: 'Khz8uD0wIvU', title: 'Gentle Chair Yoga Practice' }
+        { id: 'kS4GHa4E3Yo', title: 'Chair Yoga for Seniors - Gentle Stretches' },
+        { id: 'fQvy7pck2zk', title: 'Seated Yoga for Seniors - Full Body Stretch' },
+        { id: 'zNoN-LLVyZw', title: '20 Min Chair Yoga for Flexibility' },
+        { id: 'QL_TbZFXaUQ', title: 'Gentle Chair Yoga - Morning Routine' },
+        { id: 'Yz1tRCJ5vwM', title: 'Chair Yoga Flow - Easy Stretches' },
+        { id: 'x3GYK2dRO4U', title: '15 Minute Chair Yoga for Beginners' },
+        { id: 'kU9Xzh32zns', title: 'Relaxing Chair Yoga Practice' },
+        { id: '2kAHDIJ0ydM', title: 'Chair Yoga Full Body Workout' },
+        { id: 'R1E3DfP8fxg', title: 'Gentle Seated Yoga for Seniors' },
+        { id: 'e0RKVqwBZok', title: 'Chair Yoga - Balance and Strength' }
     ],
     regular: [
         { id: 'j7rKKpwdXNE', title: 'Gentle Yoga for Seniors - Full Class' },
