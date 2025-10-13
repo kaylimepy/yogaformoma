@@ -89,6 +89,26 @@ h1 {
     color: #667eea;
 }
 
+.reset-button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.reset-button:hover {
+    background: #ee5a52;
+}
+
+.reset-button:active {
+    transform: scale(0.98);
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 2em;

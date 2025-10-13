@@ -37,33 +37,76 @@ function saveWatchHistory(history) {
     localStorage.setItem('yogaWatchHistory', JSON.stringify(history));
 }
 
-// Get a random unwatched video
+// Check if video is available
+async function checkVideoAvailability(videoId) {
+    try {
+        const response = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`);
+        return response.ok;
+    } catch (error) {
+        return false;
+    }
+}
+
+// Mark video as broken
+function markVideoBroken(videoId) {
+    const brokenVideos = JSON.parse(localStorage.getItem('brokenVideos') || '[]');
+    if (!brokenVideos.includes(videoId)) {
+        brokenVideos.push(videoId);
+        localStorage.setItem('brokenVideos', JSON.stringify(brokenVideos));
+    }
+}
+
+// Get list of broken videos
+function getBrokenVideos() {
+    return JSON.parse(localStorage.getItem('brokenVideos') || '[]');
+}
+
+// Get a random unwatched, working video
 function getRandomVideo(type) {
     const videos = yogaVideos[type];
     const history = loadWatchHistory();
+    const brokenVideos = getBrokenVideos();
 
     // Get list of watched video IDs for this type
     const watchedIds = history
         .filter(item => item.type === type)
         .map(item => item.videoId);
 
-    // Find unwatched videos
-    const unwatchedVideos = videos.filter(video => !watchedIds.includes(video.id));
+    // Find unwatched, non-broken videos
+    const availableVideos = videos.filter(video =>
+        !watchedIds.includes(video.id) && !brokenVideos.includes(video.id)
+    );
 
-    // If all videos have been watched, reset for this type
-    if (unwatchedVideos.length === 0) {
+    // If all videos have been watched or are broken, reset watched history for this type
+    if (availableVideos.length === 0) {
         const resetHistory = history.filter(item => item.type !== type);
         saveWatchHistory(resetHistory);
-        return videos[Math.floor(Math.random() * videos.length)];
+        // Return random non-broken video
+        const workingVideos = videos.filter(video => !brokenVideos.includes(video.id));
+        return workingVideos.length > 0
+            ? workingVideos[Math.floor(Math.random() * workingVideos.length)]
+            : videos[Math.floor(Math.random() * videos.length)];
     }
 
-    // Return random unwatched video
-    return unwatchedVideos[Math.floor(Math.random() * unwatchedVideos.length)];
+    // Return random available video
+    return availableVideos[Math.floor(Math.random() * availableVideos.length)];
 }
 
 // Open video and log it
-function openVideo(type) {
+async function openVideo(type) {
     const video = getRandomVideo(type);
+
+    // Check if video is available
+    const isAvailable = await checkVideoAvailability(video.id);
+
+    if (!isAvailable) {
+        // Mark as broken and try again
+        markVideoBroken(video.id);
+        alert('Video unavailable. Trying another one...');
+        openVideo(type);
+        return;
+    }
+
     const history = loadWatchHistory();
 
     // Add to history
@@ -87,9 +130,20 @@ function updateStats() {
     document.getElementById('count').textContent = history.length;
 }
 
+// Reset all data
+function resetAll() {
+    if (confirm('Reset all watch history and broken video tracking?')) {
+        localStorage.removeItem('yogaWatchHistory');
+        localStorage.removeItem('brokenVideos');
+        updateStats();
+        alert('Reset complete!');
+    }
+}
+
 // Event listeners
 document.getElementById('chair-yoga').addEventListener('click', () => openVideo('chair'));
 document.getElementById('regular-yoga').addEventListener('click', () => openVideo('regular'));
+document.getElementById('reset-btn').addEventListener('click', resetAll);
 
 // Initialize stats on load
 updateStats();
