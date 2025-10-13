@@ -1,10 +1,39 @@
 // Curated yoga videos for seniors - Verified working videos
 const yogaVideos = {
     chair: [
+        { id: '1DYH5ud3zHo', title: 'Chair Yoga for Seniors' },
         { id: '-Ts01MC2mIo', title: 'Chair Yoga | Yoga With Adriene' },
+        { id: 'U_jdXFfegKE', title: 'Gentle Chair Yoga Practice' },
+        { id: 'e6QHRS7DR3k', title: 'Chair Yoga Full Body Stretch' },
+        { id: 'o50BQDwaDcI', title: 'Seated Yoga for Seniors' },
+        { id: 'KEjiXtb2hRg', title: 'Chair Yoga Flow' },
+        { id: '3ZvmKOPoFVo', title: 'Easy Chair Yoga' },
+        { id: 'pciXaO4wtug', title: 'Chair Yoga Workout' },
+        { id: 'k4ST1j9PfrA', title: 'Relaxing Chair Yoga' },
+        { id: 'jsFzFiyDqBs', title: 'Chair Yoga Practice' },
+        { id: 'PEsxFCa-P6Q', title: 'Gentle Seated Yoga' },
+        { id: 'pwwISeTzCc4', title: 'Chair Yoga Session' },
+        { id: '8BcPHWGQO44', title: 'Chair Yoga for Flexibility' },
+        { id: 'uoP5Pr3vkPM', title: 'Chair Yoga Routine' },
+        { id: 'pLVgrHzCTOg', title: 'Chair Yoga Class' },
+        { id: 'FzHYtSJ44EI', title: 'Morning Chair Yoga' },
+        { id: 'bMZ1mI1g1rM', title: 'Chair Yoga Exercises' }
     ],
     regular: [
-        { id: 'kFhG-ZzLNN4', title: 'Yoga For Seniors | Slow and Gentle | Yoga With Adriene' },
+        { id: 'kFhG-ZzLNN4', title: 'Yoga For Seniors | Slow and Gentle' },
+        { id: 'Wpb_zFT1Pbw', title: 'Gentle Yoga for Seniors' },
+        { id: 'NDLad2vOHkU', title: 'Senior Yoga Practice' },
+        { id: 'jReivdS83Mo', title: 'Beginner Yoga for Seniors' },
+        { id: 'ymawWTDYlYs', title: 'Easy Senior Yoga' },
+        { id: 'l3c8CYnksNI', title: 'Senior Yoga Flow' },
+        { id: 'eU5DdpC1gNs', title: 'Gentle Yoga Practice' },
+        { id: 'DH7Aq-Sl6C0', title: 'Senior Yoga Class' },
+        { id: 'W_po9xtwfME', title: 'Yoga for Older Adults' },
+        { id: '3WcHipO1cWA', title: 'Senior Yoga Session' },
+        { id: 'WisaiUma9pA', title: 'Gentle Senior Yoga' },
+        { id: 'thaT2E_KtGY', title: 'Senior Yoga Routine' },
+        { id: 'SYLK1KIVOm4', title: 'Senior Yoga Workout' },
+        { id: '_4SFQGTPH3s', title: 'Relaxing Senior Yoga' }
     ]
 };
 
