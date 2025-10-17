@@ -17,7 +17,9 @@ const yogaVideos = {
         { id: 'uoP5Pr3vkPM', title: 'Chair Yoga Routine' },
         { id: 'pLVgrHzCTOg', title: 'Chair Yoga Class' },
         { id: 'FzHYtSJ44EI', title: 'Morning Chair Yoga' },
-        { id: 'bMZ1mI1g1rM', title: 'Chair Yoga Exercises' }
+        { id: 'bMZ1mI1g1rM', title: 'Chair Yoga Exercises' },
+        { id: '1YHjBYcqJ5c', title: 'Chair Yoga for Beginners' },
+        { id: 'hizopvbXPmI', title: 'Chair Yoga Stretches' }
     ],
     regular: [
         { id: 'kFhG-ZzLNN4', title: 'Yoga For Seniors | Slow and Gentle' },
@@ -34,6 +36,19 @@ const yogaVideos = {
         { id: 'thaT2E_KtGY', title: 'Senior Yoga Routine' },
         { id: 'SYLK1KIVOm4', title: 'Senior Yoga Workout' },
         { id: '_4SFQGTPH3s', title: 'Relaxing Senior Yoga' }
+    ],
+    floor: [
+        { id: 'C27BEWYC2Ks', title: 'Floor Yoga for Seniors' },
+        { id: '3ae9YNUcsJ4', title: 'Gentle Floor Yoga' },
+        { id: '_VecIOA_r_k', title: 'Floor Yoga Practice' },
+        { id: 'DH7Aq-Sl6C0', title: 'Floor Yoga Stretches' },
+        { id: 'WIhtaT00q3w', title: 'Easy Floor Yoga' }
+    ],
+    qigong: [
+        { id: 'uQ6IXq-7Ngk', title: 'Qigong for Seniors' },
+        { id: 'YI_D0yZgoWI', title: 'Gentle Qigong Practice' },
+        { id: 'l3c8CYnksNI', title: 'Qigong Flow' },
+        { id: 'pa_I5NAOW4k', title: 'Qigong Exercises' }
     ]
 };
 
@@ -111,6 +126,11 @@ function resetAll() {
 // Event listeners
 document.getElementById('chair-yoga').addEventListener('click', () => openVideo('chair'));
 document.getElementById('regular-yoga').addEventListener('click', () => openVideo('regular'));
+document.getElementById('floor-yoga').addEventListener('click', () => openVideo('floor'));
+document.getElementById('qigong').addEventListener('click', () => openVideo('qigong'));
+document.getElementById('study-code').addEventListener('click', () => {
+    window.open('https://github.com/karlamuller/yogaformoma', '_blank');
+});
 document.getElementById('reset-btn').addEventListener('click', resetAll);
 
 // Initialize stats on load
