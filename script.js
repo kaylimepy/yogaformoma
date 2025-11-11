@@ -128,9 +128,6 @@ document.getElementById('chair-yoga').addEventListener('click', () => openVideo(
 document.getElementById('regular-yoga').addEventListener('click', () => openVideo('regular'));
 document.getElementById('floor-yoga').addEventListener('click', () => openVideo('floor'));
 document.getElementById('qigong').addEventListener('click', () => openVideo('qigong'));
-document.getElementById('study-code').addEventListener('click', () => {
-    window.open('https://github.com/karlamuller/yogaformoma', '_blank');
-});
 document.getElementById('reset-btn').addEventListener('click', resetAll);
 
 // Initialize stats on load
