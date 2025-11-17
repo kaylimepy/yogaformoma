@@ -1,3 +1,43 @@
+// Encouraging messages based on time of day
+const encouragingMessages = {
+    morning: [
+        "Good morning! So proud of you for starting your day with movement!",
+        "You're doing great! Your morning practice is a gift to yourself.",
+        "What a wonderful way to begin the day! Your body thanks you!",
+        "Good morning, beautiful soul! Ready to feel amazing today?"
+    ],
+    afternoon: [
+        "Look at you showing up for yourself! You're amazing!",
+        "So proud of you for taking this time for YOU!",
+        "Your dedication is inspiring! Keep shining!",
+        "You're doing wonderful! This is your time to recharge."
+    ],
+    evening: [
+        "You're here! That's what matters. So proud of you!",
+        "Perfect time for some self-care! Your body will thank you!",
+        "You're doing great! Time to unwind and feel good!",
+        "Look at you prioritizing yourself! You're amazing!"
+    ]
+};
+
+// Display random encouraging message based on time
+function showEncouragingMessage() {
+    const hour = new Date().getHours();
+    let timeOfDay;
+
+    if (hour < 12) {
+        timeOfDay = 'morning';
+    } else if (hour < 18) {
+        timeOfDay = 'afternoon';
+    } else {
+        timeOfDay = 'evening';
+    }
+
+    const messages = encouragingMessages[timeOfDay];
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById('encouragement').textContent = randomMessage;
+}
+
 // Curated yoga videos for seniors - Verified working videos
 const yogaVideos = {
     chair: [
@@ -130,5 +170,6 @@ document.getElementById('floor-yoga').addEventListener('click', () => openVideo(
 document.getElementById('qigong').addEventListener('click', () => openVideo('qigong'));
 document.getElementById('reset-btn').addEventListener('click', resetAll);
 
-// Initialize stats on load
+// Initialize on load
+showEncouragingMessage();
 updateStats();
