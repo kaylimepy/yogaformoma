@@ -88,7 +88,8 @@ const yogaVideos = {
         { id: 'uQ6IXq-7Ngk', title: 'Qigong for Seniors' },
         { id: 'YI_D0yZgoWI', title: 'Gentle Qigong Practice' },
         { id: 'l3c8CYnksNI', title: 'Qigong Flow' },
-        { id: 'pa_I5NAOW4k', title: 'Qigong Exercises' }
+        { id: 'pa_I5NAOW4k', title: 'Qigong Exercises' },
+        { id: 'z7dgv9zPPYA', title: 'Qigong Session' }
     ]
 };
 
