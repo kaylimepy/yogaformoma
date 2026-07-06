@@ -104,10 +104,9 @@ function saveWatchHistory(history) {
     localStorage.setItem('yogaWatchHistory', JSON.stringify(history));
 }
 
-// Get a random unwatched video
-function getRandomVideo(type) {
+// Get a random unwatched video, given the current history
+function getRandomVideo(type, history) {
     const videos = yogaVideos[type];
-    const history = loadWatchHistory();
 
     // Get list of watched video IDs for this type
     const watchedIds = history
@@ -120,7 +119,8 @@ function getRandomVideo(type) {
     // If all videos have been watched, reset for this type
     if (unwatchedVideos.length === 0) {
         const resetHistory = history.filter(item => item.type !== type);
-        saveWatchHistory(resetHistory);
+        history.length = 0;
+        history.push(...resetHistory);
         return videos[Math.floor(Math.random() * videos.length)];
     }
 
@@ -130,8 +130,8 @@ function getRandomVideo(type) {
 
 // Open video and log it
 function openVideo(type) {
-    const video = getRandomVideo(type);
     const history = loadWatchHistory();
+    const video = getRandomVideo(type, history);
 
     // Add to history
     history.push({
@@ -142,15 +142,14 @@ function openVideo(type) {
     });
 
     saveWatchHistory(history);
-    updateStats();
+    updateStats(history);
 
     // Open YouTube video
     window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank');
 }
 
 // Update stats display
-function updateStats() {
-    const history = loadWatchHistory();
+function updateStats(history = loadWatchHistory()) {
     document.getElementById('count').textContent = history.length;
 }
 
